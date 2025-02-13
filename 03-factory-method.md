@@ -10,3 +10,4 @@
 - Sometimes evolve towards Abstract Factory or Builder when more flexibility is needed
   ![factory](assets/factory.png)
   ![factory-example](assets/factory-example.png)
+  `PizzaFactory` is the `Creator`, `Pizza` is the `Product`.

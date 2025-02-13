@@ -17,17 +17,17 @@
 
 ### Model
 
-process and store application domain data (entity objects)
+Process and store application domain data (entity objects)
 
 ### View
 
-display information to the user (boundary objects)
+Display information to the user (boundary objects)
 
 ### Controller
 
-interact with the user and update the model (which notifies the view)
+Interact with the user and update the model (which notifies the view)
 
-> View and Controller together comprise the user interface
+> View and Controller together comprise the user interface. We can make Model observable and add observers to View, which are notified by the observable Model something changes. Observer typically has one method `update()` which is called by the observable.
 
 ![mvc](assets/mvc.png)
 ![mvc-impl](assets/mvc-impl.png)

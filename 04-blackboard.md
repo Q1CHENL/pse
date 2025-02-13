@@ -7,6 +7,7 @@
 - Control: govern the flow (knowledge sources get notified of new info)
   ![blackboard](assets/blackboard.png)
   ![blackboard-example](assets/blackboard-example.png)
+  We can use a BlackboardState to indicate which state the (content on) blackboard is in. We can delegate the execution of KS in Control.
 - Advantages
   - Problem solving support
   - Changeability and maintainability

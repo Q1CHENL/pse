@@ -17,3 +17,4 @@
   - Dealing with changes
     ![command](assets/command.png)
     ![example](assets/command-example.png)
+    Here, `Drone` is the `Receiver`, `RemoteControl` is the `Invoker`.

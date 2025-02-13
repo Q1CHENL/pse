@@ -11,3 +11,4 @@
 - An alternative to the facade pattern when only to hide the way the subsystem objects are created from the client code
 - Can use along with the bridge pattern
   ![abstract-factory](assets/abstract-factory.png)
+  Different Factories create different products.

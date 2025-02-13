@@ -26,7 +26,8 @@ public class InventorySystem {
     private static String TALISKER = "Talisker";
     private int totalStock;
     // No new anymore
-    @Inject private Warehouse warehouse;
+    @Inject
+    private Warehouse warehouse;
     public void addToWarehouse(String item, int amount) {
         warehouse.add(item, amount); totalStock += amount;
     }
@@ -94,3 +95,7 @@ class InventorySystemTest {
     }
 }
 ```
+
+- Test modules and production modules are separate and not necessarily connected—each serves a distinct purpose.
+  - The production module contains the real bindings that your application will use when it's running in production. This includes binding concrete classes, services, and other resources your app needs to function properly.
+  - The test module is used to set up alternative (often mock or fake) implementations of dependencies when running unit tests. These dependencies are typically simpler or more controlled for testing purposes.

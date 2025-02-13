@@ -1,6 +1,6 @@
 # Template Method Pattern
 
-## Strategy vs. template method pattern
+## Strategy vs. Template method pattern
 
 - Both are similar except the **granularity**
 - Strategy uses **delegation** to vary the **entire algorithm**

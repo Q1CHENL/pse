@@ -89,9 +89,16 @@ expect(courseMock.canEnroll(student)).andReturn(true);
   - `when()`/`given()` to specify how a mock should behave
   - Stub void method: `doNothing().when(mock).voidMethod();`
   - If the provided answers don’t fit your needs, write one yourself extending the `Answer` interface
+  - When mock a class instead of a interface
+    - `int`, `long`, `float`, etc. → `0`
+    - `boolean` → `false`
+    - Object references → `null`
+    - Collections (`List`, `Set`, `Map`, etc.) → empty collections
 - `spy()/@Spy`: partial mocking
+  - Can use `@Spy` and `@InjectMocks` on the same object
   - The behavior of single methods can be specified
   - Real methods are invoked but still can be verified and stubbed
+  - For any methods not stubbed, the real method will be called (i.e., the actual behavior).
 - `@InjectMocks`: Objects annotated with `@Spy` or `@Mock` is injected to Objects annotated with `@InjectMocks` if it has such fields
 - `verify()`: check that methods were called with given arguments
   - Can use flexible argument matching, for example any expression via the any()
@@ -179,7 +186,9 @@ ArgumentCaptor<Person> argument;
 @Test
 void test() {
     // Used together with verify: what argument was used
-    verify(mock).doSomething(argument.capture());
+    // Place argument.capture() at the specific argument position
+    // in the method call that you want to capture.
+    verify(mock).doSomething(anyInt(), argument.capture());
     assertEquals("John", argument.getValue().getName());
 }
 ```

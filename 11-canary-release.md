@@ -28,5 +28,16 @@ server {
 }
 ```
 
+- Example
+
+```java
+@Profile("canary") // @Profile("stable")
+@RestController
+@RequestMapping("/api")
+public class CanaryController {
+    ...
+}
+```
+
 ![Canary Release](assets/canary.png)
 ![Canary geo](assets/canary-geo.png)

@@ -31,6 +31,14 @@ transient failure to increase the likelihood of success
 - Example
 
 ```java
+@Configuration
+@EnableRetry
+public class PaymentServiceConfiguration {
+}
+
+```
+
+```java
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.stereotype.Service;

@@ -52,12 +52,21 @@ public class Store {
    with the same name as the property that needs to be set
 
    ```java
+   @Component
    public class Store {
        @Autowired
        // Spring will look for the one with name "item1"
        // if there are multiple ones
        @Qualifier("item1")
        private Item item;
+   }
+   ```
+
+   ```java
+   // No annotation needed for constructor injection
+   // @Autowired
+   public MeteorologicalStationControlle (IMeteorologicalStationGUI gui) {
+      this.gui = gui;
    }
    ```
 
@@ -78,3 +87,18 @@ public class Store {
 
 4. constructor: autowiring based on constructor arguments → Spring will look for
    beans with the same type as the constructor arguments
+
+5. Bean
+
+```java
+ // TODO 7: Create Beans for IMeteorologicalSensorArray and IMeteorologicalFileStorage
+ // They will then be injected automatically by Spring
+ // Use EasyMock's createMock function to create mock objects of the interfaces implementation
+ // instead of the actual implementation
+ @Bean
+ public IMeteorologicalSensorArray sensorArray() {
+     return EasyMock.createMock(IMeteorologicalSensorArray.class);
+ }
+```
+
+> Injection is auto done in class annotated with `@Component`, `@Service`, `@Repository`, `@Controller` (Beans)

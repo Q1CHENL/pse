@@ -33,3 +33,21 @@ deploying new code
 - Use cases: high traffic e-commerce
 
 ![deployment](assets/deployment-summary.png)
+
+- Example with FF4J
+
+```java
+public class SimpleFF4J {
+    // <String featureName, boolean featureState>
+    private final Map<String, Boolean> featureStore = new HashMap<>();
+
+    public void setFeature(String featureName, boolean featureState) {
+        featureStore.put(featureName, featureState);
+    }
+
+    public boolean checkFeature(String featureName) {
+        return featureStore.getOrDefault(featureName, false);
+    }
+}
+
+```
